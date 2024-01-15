@@ -1,0 +1,10 @@
+package com.uce.edu.repository.modelo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "cita_medica")
+public class CitaMedica {
+	
+}

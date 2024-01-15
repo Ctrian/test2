@@ -1,0 +1,29 @@
+package com.uce.edu.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.uce.edu.repository.ICitaMedicaRepository;
+import com.uce.edu.repository.modelo.CitaMedica;
+
+@Service
+public class CitaMedicaServiceImpl implements ICitaMedicaService {
+
+	@Autowired
+	private ICitaMedicaRepository citaMedicaRepository;
+	
+	@Override
+	public void agendar(CitaMedica citaMedica) {
+		// TODO Auto-generated method stub
+		
+		this.citaMedicaRepository.insertar(citaMedica);
+	}
+
+	@Override
+	public void actualizar(CitaMedica citaMedica) {
+		// TODO Auto-generated method stub
+		
+		this.citaMedicaRepository.actualizar(citaMedica);
+	}
+
+}

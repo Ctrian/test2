@@ -1,0 +1,33 @@
+package com.uce.edu.service;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.uce.edu.repository.ICitaMedicaRepository;
+import com.uce.edu.repository.modelo.CitaMedica;
+
+@Service
+public class CitaMedicaServiceImpl implements ICitaMedicaService {
+
+	@Autowired
+	private ICitaMedicaRepository citaMedicaRepository;
+
+	@Override
+	public void agendar(String noCita, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita,
+			String cedulaDoctor, String cedulaPaciente) {
+		// TODO Auto-generated method stub
+		
+		CitaMedica citaMedica = new CitaMedica();
+		this.citaMedicaRepository.insertar(citaMedica);
+	}
+
+	@Override
+	public void actualizar(String diagnostico, String receta, LocalDateTime fechaProximaCita) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,97 @@
+package com.uce.edu;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.uce.edu.repository.modelo.CitaMedica;
+import com.uce.edu.repository.modelo.Doctor;
+import com.uce.edu.repository.modelo.Paciente;
+import com.uce.edu.service.IDoctorService;
+
+@SpringBootApplication
+public class EfinalPa2P4CoApplication implements CommandLineRunner {
+
+	//autowired del service
+	@Autowired
+	private IDoctorService doctorService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(EfinalPa2P4CoApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		//1
+		Doctor doctor1 = new Doctor();
+		doctor1.setNombre("Carlos");
+		doctor1.setApellido("Caceres");
+		doctor1.setCedula("1723");
+		doctor1.setCodigoSenecyt("lld");
+		doctor1.setFechaNacimiento(LocalDateTime.now());
+		doctor1.setGenero("M");
+		doctor1.setNumeroConsultorio("2641");
+		
+		Paciente paciente1 = new Paciente();
+		paciente1.setNombre("Andres");
+		paciente1.setApellido("Olivares");
+		paciente1.setCedula("1750");
+		paciente1.setCodigoSeguro("llp");
+		paciente1.setEstatura(1.65f);
+		paciente1.setFechaNacimiento(LocalDateTime.now());
+		paciente1.setGenero("M");
+		paciente1.setPeso(15.3f);
+		
+		Paciente paciente2 = new Paciente();
+		paciente2.setNombre("Daniel");
+		paciente2.setApellido("Vascones");
+		paciente2.setCedula("1720");
+		paciente2.setCodigoSeguro("llpp");
+		paciente2.setEstatura(1.70f);
+		paciente2.setFechaNacimiento(LocalDateTime.now());
+		paciente2.setGenero("M");
+		paciente2.setPeso(18.3f);
+		
+		List<Paciente> pacientes = new ArrayList<Paciente>();
+		pacientes.add(paciente1);
+		pacientes.add(paciente2);
+		
+		CitaMedica citaMedica1 = new CitaMedica();
+		citaMedica1.setDoctor(doctor1);
+		citaMedica1.setPaciente(paciente1);
+		citaMedica1.setDiagnostico("tomar awuita");
+		citaMedica1.setFechaCita(LocalDateTime.now());
+		citaMedica1.setFechaProximaCita(LocalDateTime.now());
+		citaMedica1.setLugarCita("C1");
+		citaMedica1.setNumeroCita(1);
+		citaMedica1.setReceta("salir a tomar sol");
+		citaMedica1.setValorCita(new BigDecimal(20));
+		
+		CitaMedica citaMedica2 = new CitaMedica();
+		citaMedica2.setDoctor(doctor1);
+		citaMedica2.setPaciente(paciente2);
+		citaMedica2.setDiagnostico("dolor de pie");
+		citaMedica2.setFechaCita(LocalDateTime.now());
+		citaMedica2.setFechaProximaCita(LocalDateTime.now());
+		citaMedica2.setLugarCita("C3");
+		citaMedica2.setNumeroCita(3);
+		citaMedica2.setReceta("descanso");
+		citaMedica2.setValorCita(new BigDecimal(10));
+		
+		List<CitaMedica> lista = new ArrayList<>();
+		lista.add(citaMedica1);
+		lista.add(citaMedica2);
+		
+		this.doctorService.guardar(doctor1);
+		
+		
+	}
+
+}

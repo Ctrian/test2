@@ -1,0 +1,31 @@
+package com.uce.edu.service;
+
+import com.uce.edu.repository.modelo.Doctor;
+
+public class DoctorServiceImpl implements IDoctorService {
+
+	@Override
+	public Doctor buscar(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void guardar(Doctor doctor) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actualizar(Doctor doctor) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void eliminar(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

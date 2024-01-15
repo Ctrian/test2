@@ -1,0 +1,13 @@
+package com.uce.edu.service;
+
+import com.uce.edu.repository.modelo.Paciente;
+
+public class PacienteServiceImpl implements IPacienteService {
+
+	@Override
+	public Paciente buscarPorCedula(String cedula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

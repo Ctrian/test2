@@ -1,0 +1,19 @@
+package com.uce.edu.repository;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import com.uce.edu.repository.modelo.Doctor;
+
+public interface IDoctorRepository {
+//CRUD
+	public Doctor seleccionar(Integer id);
+
+	public void insertar(Doctor doctor);
+
+	public void actualizar(Doctor doctor);
+
+	public void eliminar(Integer id);
+	
+	public void insertarCita(Integer noCita, LocalDateTime fechaCita, BigDecimal valorCita, String lugarCita, String cedulaDoctor, String cedulaPaciente);
+}

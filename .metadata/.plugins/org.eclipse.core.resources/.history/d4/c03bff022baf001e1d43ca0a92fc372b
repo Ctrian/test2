@@ -1,0 +1,10 @@
+package com.uce.edu.service;
+
+import com.uce.edu.repository.modelo.CitaMedica;
+
+public interface ICitaMedicaService {
+	public void agendar(CitaMedica citaMedica);
+
+	public void actualizar(CitaMedica citaMedica);
+
+}
